@@ -6,7 +6,6 @@ function PokemonApplication() {
     const [pokemonList, setPokemonList] = useState([])
     const [selectedPokemon, setSelectedPokemon] = useState("")
     const [pokemonData, setPokemonData] = useState(null)
-    console.log(pokemonData)
 
     useEffect(() => {
         const getPokemon = async () => {
@@ -26,13 +25,13 @@ function PokemonApplication() {
 
     return (
         <>
-            <select onChange={(e) => setSelectedPokemon(e.target.value)}>
+            <select className='pokemon-select' onChange={(e) => setSelectedPokemon(e.target.value)}>
                 <option>Välj en Pokémon</option>
                 {pokemonList.map((pokemon) => (
                     <option value={pokemon.name} key={pokemon.name}>{pokemon.name}</option>
                 ))}
             </select>
-            <button onClick={getSelectedPokemon}>Hämta Pokémon</button>
+            <button className="pokemon-button" onClick={getSelectedPokemon}>Hämta Pokémon</button>
             {pokemonData && <Pokemon pokemonData={pokemonData} />}
         </>
     )

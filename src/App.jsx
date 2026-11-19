@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <h2>Pokémon App</h2>
-      <button onClick={() => setShowPokemon(!showPokemon)}>{showPokemon ? "Stäng Pokémon App" : "Starta Pokémon App"}</button>
+      <h1>Pokémon App</h1>
+      <button className='start-button' onClick={() => setShowPokemon(!showPokemon)}>{showPokemon ? "Stäng Pokémon App" : "Starta Pokémon App"}</button>
       {showPokemon && <PokemonApplication />}
     </>
   )
